@@ -1,2 +1,19 @@
 ---
-# tasks file for docker
+# tasks file for docker-role
+
+ - name: install Docker Engine on Amazon Linux 
+   shell: amazon-linux-extras install -y docker
+   
+ - name: install pip
+   yum:
+     name: python-pip
+   
+ - name: install Python SDK
+   pip:
+     name: docker
+
+ - name: start Docker
+   systemd:
+     name: docker
+     state: started
+     enabled: yes
