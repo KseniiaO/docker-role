@@ -8,7 +8,7 @@
    yum:
      name: python-pip
    
- - name: install Python SDK
+ - name: install Docker SDK for Python
    pip:
      name: docker
 
